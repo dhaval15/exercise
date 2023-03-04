@@ -1,0 +1,13 @@
+
+* Exercise
+
+** User Interface
+- [ ] LoginScreen
+- [ ] Sidebar
+- [ ] HomePage
+
+** API
+
+- [ ] GET https://jsonplaceholder.typicode.com/posts 
+- [ ] GET https://jsonplaceholder.typicode.com/users/<userID>/posts
+- [ ] GET https://jsonplaceholder.typicode.com/posts/<postId>/comments

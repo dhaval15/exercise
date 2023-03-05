@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'home_screen.dart';
+
 typedef ScreenBuilder = Widget Function(
     BuildContext context, Object? arguments);
 
@@ -13,6 +15,7 @@ class ScreenRouteGenerator {
   });
 
   static final Map<String, ScreenBuilder> _routes = {
+		Screens.HOME: (context,args) => const HomeScreen(),
   };
 
   ScreenBuilder? _find(String? name) {

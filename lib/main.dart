@@ -19,6 +19,7 @@ class ExerciseApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Exercise App',
         onGenerateRoute: const ScreenRouteGenerator(),
+				initialRoute: Screens.LOGIN,
 				debugShowCheckedModeBanner: false,
         theme: ThemeData(
           appBarTheme: const AppBarTheme(

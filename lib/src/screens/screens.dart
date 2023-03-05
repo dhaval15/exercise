@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'home_screen.dart';
+import 'login_screen.dart';
 
 typedef ScreenBuilder = Widget Function(
     BuildContext context, Object? arguments);
@@ -15,6 +16,7 @@ class ScreenRouteGenerator {
   });
 
   static final Map<String, ScreenBuilder> _routes = {
+		Screens.LOGIN: (context,args) => const LoginScreen(),
 		Screens.HOME: (context,args) => const HomeScreen(),
   };
 

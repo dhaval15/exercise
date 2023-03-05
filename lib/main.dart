@@ -15,15 +15,20 @@ class ExerciseApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PostStoreProvider(
-		  store: PostStore(const PostApi('https://jsonplaceholder.typicode.com')),
+      store: PostStore(const PostApi('https://jsonplaceholder.typicode.com')),
       child: MaterialApp(
         title: 'Exercise App',
-			onGenerateRoute: const ScreenRouteGenerator(),
+        onGenerateRoute: const ScreenRouteGenerator(),
+				debugShowCheckedModeBanner: false,
         theme: ThemeData(
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.transparent,
+						elevation: 0,
+						foregroundColor: Colors.black,
+          ),
           primarySwatch: Colors.blue,
         ),
       ),
     );
   }
 }
-

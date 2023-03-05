@@ -2,12 +2,12 @@
 * Exercise
 
 ** User Interface
-- [ ] LoginScreen
+- [X] LoginScreen
 - [ ] Sidebar
-- [ ] HomePage
+- [X] HomePage
 
 ** API
 
-- [ ] GET https://jsonplaceholder.typicode.com/posts 
-- [ ] GET https://jsonplaceholder.typicode.com/users/<userID>/posts
-- [ ] GET https://jsonplaceholder.typicode.com/posts/<postId>/comments
+- [X] GET https://jsonplaceholder.typicode.com/posts 
+- [X] GET https://jsonplaceholder.typicode.com/users/<userID>/posts
+- [X] GET https://jsonplaceholder.typicode.com/posts/<postId>/comments

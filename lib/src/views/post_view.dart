@@ -5,14 +5,12 @@ import '../models/models.dart';
 
 class PostView extends StatelessWidget {
   final Post post;
-  final GestureTapCallback? onTap;
   final GestureTapCallback? onTapUserId;
   final GestureTapCallback? onTapComments;
 
   const PostView({
     super.key,
     required this.post,
-    this.onTap,
     this.onTapUserId,
     this.onTapComments,
   });

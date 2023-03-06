@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'home_screen.dart';
 import 'login_screen.dart';
+import 'comments_screen.dart';
 
 typedef ScreenBuilder = Widget Function(
     BuildContext context, Object? arguments);
@@ -16,10 +17,16 @@ class ScreenRouteGenerator {
   });
 
   static final Map<String, ScreenBuilder> _routes = {
-		Screens.LOGIN: (context,args) => const LoginScreen(),
-		Screens.HOME: (context,args) => const HomeScreen(),
+    Screens.LOGIN: (context, args) => const LoginScreen(),
+    Screens.HOME: (context, args) => const HomeScreen(),
+    Screens.COMMENTS: (context, dynamic args) => CommentsScreen(
+          postTitle: args[#postTitle],
+          comments: args[#comments],
+        ),
   };
 
+  /// Finds [ScreenBuilder] in order of :
+  /// [overides] > [redirects] > [_routes]
   ScreenBuilder? _find(String? name) {
     final override = overrides[name];
     if (override != null) return override;
@@ -28,6 +35,8 @@ class ScreenRouteGenerator {
     return _routes[name];
   }
 
+  /// By implementing call method, we can use instance of
+  /// [ScreenGenerator] for onGenerateRoute for [Navigator]
   MaterialPageRoute call(RouteSettings settings) {
     final builder = _find(settings.name);
     if (builder != null) {
@@ -41,4 +50,5 @@ class ScreenRouteGenerator {
 class Screens {
   static const HOME = '/';
   static const LOGIN = '/login';
+  static const COMMENTS = '/comments';
 }

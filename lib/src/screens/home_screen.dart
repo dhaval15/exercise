@@ -5,6 +5,7 @@ import '../providers/providers.dart';
 import '../stores/stores.dart';
 import '../views/views.dart';
 import '../widgets/widgets.dart';
+import 'screens.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -44,13 +45,22 @@ class _HomeScreenState extends State<HomeScreen> {
             stream: pageController.stream
                 .asyncMap((index) => store.page(index).first),
             builder: (context, post) => PostView(
-              key: Key('Post #${post.id}'),
-              post: post,
-            ),
+                key: Key('Post #${post.id}'),
+                post: post,
+                onTapComments: () async {
+								  final comments = await store.api.getComments(post.id);
+                  Navigator.of(context).pushNamed(
+                    Screens.COMMENTS,
+                    arguments: {
+											#postTitle: post.title,
+											#comments: comments,
+										},
+                  );
+                }),
           ),
           SliverToBoxAdapter(
             child: Align(
-						  alignment: Alignment.center,
+              alignment: Alignment.center,
               child: StreamBuilder<int>(
                 stream: store.numberOfPages,
                 builder: (context, snapshot) => snapshot.hasData

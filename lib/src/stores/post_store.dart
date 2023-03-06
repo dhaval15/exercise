@@ -5,8 +5,9 @@ import 'rivulet.dart';
 class PostStore {
   final Rivulet<List<Post>> _posts;
   final int pageSize;
+	final PostApi api;
 
-  PostStore(PostApi api, [this.pageSize = 20])
+  PostStore(this.api, [this.pageSize = 20])
       : _posts = Rivulet(onInit: api.getPosts, data: []);
 
   Stream<List<Post>> get posts => _posts.stream;

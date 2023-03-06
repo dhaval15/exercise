@@ -15,11 +15,6 @@ class PostStoreProvider extends InheritedWidget {
       context.findAncestorWidgetOfExactType<PostStoreProvider>()!._store;
 
   @override
-  Widget build(BuildContext context) {
-    return child;
-  }
-
-  @override
   bool updateShouldNotify(covariant InheritedWidget oldWidget) {
     return oldWidget is PostStoreProvider && (oldWidget)._store == _store;
   }

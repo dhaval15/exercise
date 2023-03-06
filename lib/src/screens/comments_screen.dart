@@ -5,11 +5,9 @@ import '../views/views.dart';
 import '../widgets/widgets.dart';
 
 class CommentsScreen extends StatelessWidget {
-  final String postTitle;
   final List<Comment> comments;
   const CommentsScreen({
     super.key,
-    required this.postTitle,
     required this.comments,
   });
 
@@ -18,14 +16,15 @@ class CommentsScreen extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          SliverAppBar(
-            title: Text(postTitle),
+          const SliverAppBar(
+            title: Text('Comments'),
           ),
           StreamSliverListBuilder<Comment>(
-					  stream: Stream.value(comments),
+            stream: Stream.value(comments),
             builder: (context, comment) => CommentView(
               key: Key('Comment #${comment.id}'),
               comment: comment,
+              avatarColor: comment.id % 2 == 0 ? Colors.pink : Colors.indigo,
             ),
           ),
         ],

@@ -41,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: const Text('Login'),
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      Navigator.of(context).pushNamed(Screens.HOME);
+                      Navigator.of(context).pushReplacementNamed(Screens.HOME);
                     }
                   },
                 ),

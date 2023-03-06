@@ -75,6 +75,21 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            const ListTile(
+              title: Text('Home'),
+            ),
+            ListTile(
+              title: const Text('Sign Out'),
+              onTap: () {
+                Navigator.of(context).pushReplacementNamed(Screens.LOGIN);
+              },
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

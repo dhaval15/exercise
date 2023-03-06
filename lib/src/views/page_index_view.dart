@@ -41,12 +41,22 @@ class PageIndexView extends StatefulWidget {
 }
 
 class _PageIndexViewState extends State<PageIndexView> {
+
+  /// Return list of indices which are to be shown
+	/// Size of the list returned will be of [numberOfIndicesToShow]
+	/// or [numberOfPages], if it is lesser
   List<int> get _indices {
     final list = <int>[];
     int i = 1;
     int currentIndex = widget.controller.currentIndex;
     list.add(currentIndex);
 
+		/// Adds value to [list]
+
+		/// [atFirst] decides weather to insert at begining or at end.
+		
+		/// return false without adding the element, if length of 
+		/// the [list] is already up to [numberOfIndicesToShow]
     bool add(int value, {bool atFirst = false}) {
       if (list.length < widget.numberOfIndicesToShow) {
         if (atFirst) {
@@ -59,7 +69,7 @@ class _PageIndexViewState extends State<PageIndexView> {
         return false;
       }
     }
-
+		/// adds indices after and before the [currentIndex] iteratively
     while (true) {
       if (currentIndex + i < widget.totalIndices && !(add(currentIndex + i))) {
         break;

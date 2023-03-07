@@ -45,13 +45,19 @@ class _HomeScreenState extends State<HomeScreen> {
             stream: pageController.stream
                 .asyncMap((index) => store.page(index).first),
             builder: (_, post) => PostView(
-                key: Key('Post #${post.id}'),
-                post: post,
-                onTapComments: () async {
-                  final comments = await store.api.getComments(post.id);
-                  Navigator.of(context)
-                      .pushNamed(Screens.COMMENTS, arguments: comments);
-                }),
+              key: Key('Post #${post.id}'),
+              post: post,
+              onTapComments: () async {
+                final comments = await store.api.getComments(post.id);
+                Navigator.of(context)
+                    .pushNamed(Screens.COMMENTS, arguments: comments);
+              },
+							onTapUserId: () async {
+							  final posts = await store.api.getPostsByUserId(post.userId);
+								Navigator.of(context)
+										.pushNamed(Screens.POSTS, arguments: posts);
+							},
+            ),
           ),
           SliverToBoxAdapter(
             child: Align(

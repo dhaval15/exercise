@@ -23,7 +23,7 @@ class PostView extends StatelessWidget {
       margin: const EdgeInsets.all(8),
       decoration: BoxDecoration(
         color: theme.colorScheme.onSurface.withOpacity(0.1),
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(12),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,21 +35,19 @@ class PostView extends StatelessWidget {
           Text(
             post.body,
           ),
-          Align(
-            alignment: Alignment.centerRight,
-            child: RichText(
-              text: TextSpan(
-                text: 'by ${post.userId}',
-                style: DefaultTextStyle.of(context).style.copyWith(
-                      decoration:
-                          onTapUserId != null ? TextDecoration.underline : null,
-                    ),
-                recognizer: onTapUserId != null
-                    ? (TapGestureRecognizer()..onTap = onTapUserId)
-                    : null,
+          if (onTapUserId != null)
+            Align(
+              alignment: Alignment.centerRight,
+              child: RichText(
+                text: TextSpan(
+                  text: 'by ${post.userId}',
+                  style: DefaultTextStyle.of(context).style.copyWith(
+                        decoration: TextDecoration.underline,
+                      ),
+                  recognizer: TapGestureRecognizer()..onTap = onTapUserId,
+                ),
               ),
             ),
-          ),
           Align(
             alignment: Alignment.centerLeft,
             child: TextButton(

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'home_screen.dart';
 import 'login_screen.dart';
 import 'comments_screen.dart';
+import 'posts_screen.dart';
 
 typedef ScreenBuilder = Widget Function(
     BuildContext context, Object? arguments);
@@ -20,6 +21,7 @@ class ScreenRouteGenerator {
     Screens.LOGIN: (context, args) => const LoginScreen(),
     Screens.HOME: (context, args) => const HomeScreen(),
     Screens.COMMENTS: (context, dynamic args) => CommentsScreen(comments: args),
+    Screens.POSTS: (context, dynamic args) => PostsScreen(posts: args),
   };
 
   /// Finds [ScreenBuilder] in order of :
@@ -48,4 +50,5 @@ class Screens {
   static const HOME = '/';
   static const LOGIN = '/login';
   static const COMMENTS = '/comments';
+  static const POSTS = '/posts';
 }

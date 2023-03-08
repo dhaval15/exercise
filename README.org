@@ -1,6 +1,8 @@
 
 * Exercise
 
+See web ui  at: [[https://exercise.dhaval.cloud][Exercise]] (The user-interface is not  optimized for web)
+
 ** User Interface
 - [X] LoginScreen
 - [X] Sidebar

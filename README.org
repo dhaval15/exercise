@@ -3,11 +3,21 @@
 
 ** User Interface
 - [X] LoginScreen
-- [ ] Sidebar
-- [X] HomePage
+- [X] Sidebar
+- [X] HomeScreen
+- [X] CommentScreen
 
 ** API
-
 - [X] GET https://jsonplaceholder.typicode.com/posts 
 - [X] GET https://jsonplaceholder.typicode.com/users/<userID>/posts
 - [X] GET https://jsonplaceholder.typicode.com/posts/<postId>/comments
+
+** Test
+#+begin_src bash
+flutter test
+#+end_src
+
+** Build
+#+begin_src bash
+flutter build apk
+#+end_src

@@ -31,7 +31,8 @@ class CommentView extends StatelessWidget {
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: theme.colorScheme.onSurface.withOpacity(0.1),
-              borderRadius: BorderRadius.circular(12).copyWith(topLeft: Radius.zero),
+              borderRadius:
+                  BorderRadius.circular(12).copyWith(topLeft: Radius.zero),
             ),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,7 +62,6 @@ class CommentView extends StatelessWidget {
     );
   }
 }
-
 
 class ExtraPainter extends CustomPainter {
   final Color color;

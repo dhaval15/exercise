@@ -1,4 +1,3 @@
-
 class Comment {
   final int postId;
   final int id;
@@ -22,4 +21,3 @@ class Comment {
         body: json['body'],
       );
 }
-

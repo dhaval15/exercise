@@ -6,7 +6,7 @@ import '../models/models.dart';
 
 class PostApi {
   final String _baseUrl;
-	static const decoder = JsonDecoder();
+  static const decoder = JsonDecoder();
 
   const PostApi(this._baseUrl);
 

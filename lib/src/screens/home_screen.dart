@@ -42,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
             title: Text('Posts'),
           ),
           StreamSliverListBuilder<Post>(
-					  padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
             stream: pageController.stream
                 .asyncMap((index) => store.page(index).first),
             builder: (_, post) => PostView(
@@ -53,11 +53,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 Navigator.of(context)
                     .pushNamed(Screens.COMMENTS, arguments: comments);
               },
-							onTapUserId: () async {
-							  final posts = await store.api.getPostsByUserId(post.userId);
-								Navigator.of(context)
-										.pushNamed(Screens.POSTS, arguments: posts);
-							},
+              onTapUserId: () async {
+                final posts = await store.api.getPostsByUserId(post.userId);
+                Navigator.of(context)
+                    .pushNamed(Screens.POSTS, arguments: posts);
+              },
             ),
           ),
           SliverToBoxAdapter(

@@ -25,7 +25,7 @@ class Rivulet<T> {
     notify();
   }
 
-  Future modify(FutureOr Function(T data) modifier) async{
+  Future modify(FutureOr Function(T data) modifier) async {
     await modifier(data);
     notify();
   }

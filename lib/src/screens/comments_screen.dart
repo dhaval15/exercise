@@ -22,7 +22,7 @@ class CommentsScreen extends StatelessWidget {
           StreamSliverListBuilder<Comment>(
             stream: Stream.value(comments),
             divider: const SizedBox(height: 6),
-						padding: const EdgeInsets.all(12),
+            padding: const EdgeInsets.all(12),
             builder: (context, comment) => CommentView(
               key: Key('Comment #${comment.id}'),
               comment: comment,

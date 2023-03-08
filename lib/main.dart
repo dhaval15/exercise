@@ -14,7 +14,7 @@ class ExerciseApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-	  ThemeData defaultTheme = ThemeData.light();
+    ThemeData defaultTheme = ThemeData.light();
     return PostStoreProvider(
       store: PostStore(const PostApi('https://jsonplaceholder.typicode.com')),
       child: MaterialApp(
@@ -34,8 +34,7 @@ class ExerciseApp extends StatelessWidget {
               //borderRadius: BorderRadius.circular(16),
             ),
             filled: true,
-            fillColor:
-                defaultTheme.colorScheme.onSurface.withOpacity(0.01),
+            fillColor: defaultTheme.colorScheme.onSurface.withOpacity(0.01),
             contentPadding: const EdgeInsets.symmetric(horizontal: 8),
           ),
           primarySwatch: Colors.blue,

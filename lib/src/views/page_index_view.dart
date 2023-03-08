@@ -94,7 +94,7 @@ class _PageIndexViewState extends State<PageIndexView> {
                 }
               : null,
           child: const Text('Prev'),
-        ),
+        ), // Enabled only when there is previous page available
         for (int index in _indices)
           InkWell(
             onTap: () {
@@ -105,7 +105,8 @@ class _PageIndexViewState extends State<PageIndexView> {
               color: index == widget.controller.currentIndex
                   ? Theme.of(context).colorScheme.onSurface.withOpacity(0.1)
                   : Colors.transparent,
-              padding: const EdgeInsets.all(4),
+							margin: const EdgeInsets.symmetric(horizontal: 2),
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
               child: Text(
                 '${index + 1}',
               ),
@@ -119,7 +120,7 @@ class _PageIndexViewState extends State<PageIndexView> {
                 }
               : null,
           child: const Text('Next'),
-        ),
+        ), // Enabled only when there is next page available
       ],
     );
   }

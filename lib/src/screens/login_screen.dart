@@ -35,9 +35,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   decoration: const InputDecoration(
                     labelText: 'Email Address',
                   ),
+									autovalidateMode: AutovalidateMode.onUserInteraction,
                 ),
                 const SizedBox(height: 32),
-                TextButton(
+                MaterialButton(
                   child: const Text('Login'),
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {

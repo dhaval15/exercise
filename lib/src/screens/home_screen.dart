@@ -42,6 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
             title: Text('Posts'),
           ),
           StreamSliverListBuilder<Post>(
+					  padding: const EdgeInsets.all(16),
             stream: pageController.stream
                 .asyncMap((index) => store.page(index).first),
             builder: (_, post) => PostView(

@@ -40,17 +40,25 @@ class PostView extends StatelessWidget {
               alignment: Alignment.centerRight,
               child: RichText(
                 text: TextSpan(
-                  text: 'by ${post.userId}',
-                  style: DefaultTextStyle.of(context).style.copyWith(
-                        decoration: TextDecoration.underline,
-                      ),
-                  recognizer: TapGestureRecognizer()..onTap = onTapUserId,
+                  text: 'by',
+                  children: [
+                    const TextSpan(
+                      text: '  ',
+                    ),
+                    TextSpan(
+                      text: '${post.userId}',
+                      style: DefaultTextStyle.of(context).style.copyWith(
+                            decoration: TextDecoration.underline,
+                          ),
+                      recognizer: TapGestureRecognizer()..onTap = onTapUserId,
+                    ),
+                  ],
                 ),
               ),
             ),
           Align(
             alignment: Alignment.centerLeft,
-            child: TextButton(
+            child: MaterialButton(
               onPressed: onTapComments,
               child: const Text('Comments'),
             ),

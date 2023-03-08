@@ -31,7 +31,7 @@ class CommentView extends StatelessWidget {
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: theme.colorScheme.onSurface.withOpacity(0.1),
-              //borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(12).copyWith(topLeft: Radius.zero),
             ),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,

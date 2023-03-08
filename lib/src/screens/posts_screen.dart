@@ -20,6 +20,7 @@ class PostsScreen extends StatelessWidget {
             title: Text('Posts'),
           ),
           StreamSliverListBuilder<Post>(
+					  padding: const EdgeInsets.all(16),
             stream: Stream.value(posts),
             builder: (_, post) => PostView(
               key: Key('Post #${post.id}'),

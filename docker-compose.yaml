@@ -1,8 +1,8 @@
 services:
 
-  exercise_doc:
+  exercise:
     image: joseluisq/static-web-server:2
-    container_name: exercise-doc
+    container_name: exercise
     restart: unless-stopped
     profiles: ["public"]
     ports:
